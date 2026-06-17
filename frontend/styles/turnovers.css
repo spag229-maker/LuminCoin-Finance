@@ -1,0 +1,54 @@
+.newTurnover .redBtn,
+.newTurnover .greenBtn {
+    padding: 11px 16px;
+}
+
+.redBtn {
+    margin-left: 8px;
+}
+
+.newTurnover {
+    margin: 20px 0 -20px 0;
+}
+
+.operation-field {
+    width: 1100px;
+    padding: 15px 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-template-columns:
+    105px 60px
+    30px 110px
+    89px 80px
+    57px 100px
+    41px 130px
+    119px 125px
+    13px 10px ;
+}
+
+.operation-explan {
+    color: #052C65;
+    margin-top: 40px;
+    border-bottom: 1px solid #DEE2E6;
+    border-top: 1px solid #DEE2E6;
+}
+
+.operation {
+    font-size: 16px;
+    line-height: 23px;
+    font-family: Roboto-regular,sans-serif;
+}
+
+.operation  svg {
+    cursor: pointer;
+}
+
+.income {
+    color: #198754;
+}
+
+.expense {
+    color: #DC3545;
+}
