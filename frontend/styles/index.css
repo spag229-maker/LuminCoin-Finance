@@ -1,0 +1,8 @@
+.statistic {
+    padding-top: 140px;
+    margin-right: 322px;
+    display: grid;
+    grid-template-columns: 437px 437px;
+    gap: 169px;
+    justify-content: center;
+}

@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #FFF;
+    font-family: Roboto-Medium, sans-serif;
+}
+
+@font-face {
+    font-family: "Roboto-regular";
+    src: url("../static/fonts/Roboto-Regular.ttf") ;
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("../static/fonts/Roboto-Medium.ttf") ;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBar-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    border-right: 1px solid #D9D9D9;
+    font-family: Roboto-regular, sans-serif;
+}
+
+.logo {
+    padding: 40px 70px 20px 50px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.navMenu {
+    margin-bottom: auto;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    /*border: none;*/
+    outline: none;
+    border-radius: 5px;
+    width: 178px;
+    height: 40px;
+    padding: 12px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+    font-size: 14px;
+}
+
+.categoriesPageBtn svg {
+    margin-left: auto;
+}
+
+.navButton-active {
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+.dropdown:hover {
+    border: 1px solid #0d6EFD;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+}
+
+.dropdown-content {
+    margin-left: -1px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 178px;
+    background: transparent;
+    border-radius: 0 0 5px 5px;
+    z-index: 100;
+
+    opacity: 0;
+    pointer-events: none;
+    animation: slideUp 0.2s ease forwards;
+}
+
+.dropdown:hover .dropdown-content {
+    border: 1px solid #0d6EFD;
+    border-top: none;
+    pointer-events: all;
+    animation: slideDown 0.2s ease forwards;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #0d6efd;
+}
+
+.dropdown-content a:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+.dropdown-content a:last-child:hover {
+    border-radius: 0 0 5px 5px;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px); }
+}
+
+.userData {
+    padding-bottom: 40px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0 0 20px;
+    text-align: center;
+    border-top: 1px solid #D9D9D9;
+}
+
+.balance {
+    padding: 20px
+}
+
+#currentBalance {
+    padding-left: 10px;
+    color: #0D6EFD;
+}
+
+.mainInfo {
+    padding: 60px 0 0 100px;
+    width: 100%;
+}
+
+.mainTitle {
+    color: #052C65;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.mainInfo-filtersStroke {
+    margin-top: 60px;
+}
+
+.mainInfo-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.mainInfo-filtersStroke {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.mainInfo-filter {
+    padding: 8px 0;
+    width: 98px;
+    text-align: center;
+    border: 1px solid #6C757D;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    list-style: none;
+    color: #6C757D;
+    cursor: pointer;
+}
+
+.mainInfo-filter-active {
+    background-color: #6C757D;
+    color: #FFFFFF;
+}
+
+.dateFilters {
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.dateFilter {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-family: Roboto-Medium, sans-serif;
+    color: #959595;
+    text-decoration: underline;
+    width: 39px;
+    text-align: center;
+}
+
+.greenBtn, .redBtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: Roboto-Medium, sans-serif;
+}
+
+.greenBtn {
+    background-color: #198754;
+}
+
+.redBtn {
+    background-color: #DC3545;
+}
