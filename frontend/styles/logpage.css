@@ -1,0 +1,116 @@
+.mainTitle {
+    padding-bottom: 20px;
+}
+
+.blueBtn {
+    padding: 10px 177px;
+    margin:  20px 0 10px 0;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formField {
+    display: flex;
+    font-family: Roboto-regular, sans-serif;
+    font-size: 12px;
+    line-height: 23px;
+}
+
+.formInput {
+    outline: none;
+    border: 1px solid #CED4DA;
+    height: 36px;
+    border-radius: 0 4px 4px 0;
+    padding-left: 13px;
+    color: #6C757D;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: Roboto-regular, sans-serif;
+    width: 339px;
+}
+
+.switchPage {
+    font-family: Roboto-regular, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.switchPage a {
+    color: #0D6EFD;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+
+.rememberMe {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.rememberMeInit {
+    margin: 3px 12px 0 0;
+    position: relative;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: 2px solid #DEE2E6;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.formField input:checked ~ .rememberMeInit {
+    background-color: #0D6EFD;
+    border-color: #0D6EFD;
+}
+
+.rememberMeInit::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 3px;
+    top: 0;
+    width: 4px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.formField input:checked ~ .rememberMeInit::after {
+    display: block;
+}
+
+.formField:has(.input-error) svg rect,
+.formField:has(.input-error) svg path:first-of-type {
+}
+
+.formInput.input-error {
+    border-color: #E53E3E !important;
+    background-color: #FFF5F5;
+}
+
+.formInput.input-ok {
+    border-color: #38A169 !important;
+    background-color: #F0FFF4;
+}
+
+.validation-hint {
+    display: block;
+    font-size: 11px;
+    color: #E53E3E;
+    margin-top: 2px;
+    padding-left: 2px;
+    min-height: 14px;
+    line-height: 1.2;
+}
+
+.formInput:focus {
+    outline: none;
+}
