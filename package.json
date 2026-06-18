@@ -2,7 +2,7 @@
   "name": "LuminCoin-Finance",
   "version": "1.0.0",
   "description": "",
-  "main": "frontend/src/components/index.js",
+  "main": "frontend/src/components/incomes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

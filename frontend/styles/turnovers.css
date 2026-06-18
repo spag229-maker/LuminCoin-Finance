@@ -52,3 +52,13 @@
 .expense {
     color: #DC3545;
 }
+
+.createTurnover {
+    padding-top: 20px;
+    display: none;
+    flex-direction: column;
+}
+
+.createTurnover button {
+    padding: 11px 16px;
+}

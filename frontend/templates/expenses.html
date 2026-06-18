@@ -1,87 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LuminCoin Finance</title>
-  <link rel="stylesheet" href="../styles/expenses.css">
-  <link rel="stylesheet" href="../styles/common.css">
+    <meta charset="UTF-8">
+    <title>LuminCoin Finance</title>
+    <link rel="stylesheet" href="../styles/expenses.css">
+    <link rel="stylesheet" href="../styles/operations.css">
+    <link rel="stylesheet" href="../styles/common.css">
 
 </head>
 <body>
 
 <main class="main">
-  <section class="sideBar">
-    <div class="sideBar-container">
-      <div class="logo">
-        <a href="#">
-          <img src="../static/images/Logo.png" alt="Logo">
-        </a>
-      </div>
-      <div class="navMenu">
-        <a href="../index.html">
-          <button class="navButton" id="mainPageBtn">
-            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M1.5 12.2929V5.79289H2.5V12.2929C2.5 12.569 2.72386 12.7929 3 12.7929H12C12.2761 12.7929 12.5 12.569 12.5 12.2929V5.79289H13.5V12.2929C13.5 13.1213 12.8284 13.7929 12 13.7929H3C2.17157 13.7929 1.5 13.1213 1.5 12.2929Z"
-                    fill="#052C65"/>
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.5 1.29289V4.79289L10.5 2.79289V1.29289C10.5 1.01675 10.7239 0.792893 11 0.792893H12C12.2761 0.792893 12.5 1.01675 12.5 1.29289Z"
-                    fill="#052C65"/>
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M6.79289 0.292893C7.18342 -0.0976322 7.81658 -0.0976301 8.20711 0.292893L14.8536 6.93934C15.0488 7.1346 15.0488 7.45118 14.8536 7.64645C14.6583 7.84171 14.3417 7.84171 14.1464 7.64645L7.5 1L0.853553 7.64645C0.658291 7.84171 0.341709 7.84171 0.146447 7.64645C-0.0488155 7.45118 -0.0488155 7.1346 0.146447 6.93934L6.79289 0.292893Z"
-                    fill="#052C65"/>
-            </svg>
-            Главная
-          </button>
-        </a>
-        <a href="turnovers.html">
-          <button class="navButton navButton-active" id="turnoverPageBtn">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M11 15C13.2091 15 15 13.2091 15 11C15 8.79086 13.2091 7 11 7C8.79086 7 7 8.79086 7 11C7 13.2091 8.79086 15 11 15ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z"
-                    fill="white"/>
-              <path d="M9.4375 11.9444C9.48519 12.5403 9.95568 13.0049 10.8013 13.0599V13.5H11.1764V13.0568C12.0507 12.9957 12.5625 12.5281 12.5625 11.8496C12.5625 11.2323 12.1715 10.9144 11.4721 10.7494L11.1764 10.6791V9.48105C11.5516 9.52384 11.79 9.72861 11.8472 10.0128H12.5053C12.4576 9.43826 11.9648 8.989 11.1764 8.9401V8.5H10.8013V8.94927C10.0542 9.02262 9.54559 9.47188 9.54559 10.1076C9.54559 10.6699 9.92389 11.0275 10.5533 11.1742L10.8013 11.2353V12.5067C10.4166 12.4487 10.1623 12.2378 10.1051 11.9444H9.4375ZM10.7981 10.5905C10.4294 10.5049 10.2291 10.3307 10.2291 10.0678C10.2291 9.77445 10.4453 9.5544 10.8013 9.49022V10.5905H10.7981ZM11.2305 11.3362C11.6787 11.4401 11.8854 11.6082 11.8854 11.9046C11.8854 12.2439 11.6279 12.4762 11.1764 12.5189V11.324L11.2305 11.3362Z"
-                    fill="white"/>
-              <path d="M1 0C0.447715 0 0 0.447716 0 1V9C0 9.55229 0.447715 10 1 10H5.08296C5.1407 9.65585 5.22773 9.32163 5.34141 9H3C3 7.89543 2.10457 7 1 7V3C2.10457 3 3 2.10457 3 1H13C13 2.10457 13.8954 3 15 3V6.52779C15.3801 6.86799 15.7166 7.25594 16 7.68221V1C16 0.447715 15.5523 0 15 0H1Z"
-                    fill="white"/>
-              <path d="M9.9983 5.08325C9.99943 5.05564 10 5.02789 10 5C10 3.89543 9.10457 3 8 3C6.89543 3 6 3.89543 6 5C6 5.6845 6.34387 6.28869 6.86829 6.64924C7.71486 5.84504 8.79591 5.28533 9.9983 5.08325Z"
-                    fill="white"/>
-            </svg>
-            Доходы & Расходы
-          </button>
-        </a>
-        <div class="dropdown">
-          <button class="navButton categoriesPageBtn">
-            Категории
-            <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M0.146894 12.8546C0.0528521 12.7608 0 12.6335 0 12.5006C0 12.3678 0.0528521 12.2404 0.146894 12.1466L5.79389 6.50064L0.146894 0.854643C0.0204218 0.72817 -0.0289712 0.543834 0.0173208 0.37107C0.0636128 0.198306 0.198557 0.0633621 0.371321 0.0170698C0.544085 -0.0292225 0.728422 0.0201702 0.854894 0.146643L6.85489 6.14664C6.94894 6.24045 7.00179 6.36782 7.00179 6.50064C7.00179 6.63347 6.94894 6.76084 6.85489 6.85464L0.854894 12.8546C0.76109 12.9487 0.633721 13.0015 0.500894 13.0015C0.368066 13.0015 0.240698 12.9487 0.146894 12.8546Z"
-                    fill="#052C65"/>
-            </svg>
-          </button>
-          <div class="dropdown-content">
-            <a href="incomes.html">Доходы</a>
-            <a href="expenses.html">Расходы</a>
-          </div>
+    <section class="sideBar">
+        <div class="sideBar-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="../static/images/Logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="navMenu">
+                <a href="../index.html">
+                    <button class="navButton" id="mainPageBtn">
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M1.5 12.2929V5.79289H2.5V12.2929C2.5 12.569 2.72386 12.7929 3 12.7929H12C12.2761 12.7929 12.5 12.569 12.5 12.2929V5.79289H13.5V12.2929C13.5 13.1213 12.8284 13.7929 12 13.7929H3C2.17157 13.7929 1.5 13.1213 1.5 12.2929Z"
+                                  fill="#052C65"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M12.5 1.29289V4.79289L10.5 2.79289V1.29289C10.5 1.01675 10.7239 0.792893 11 0.792893H12C12.2761 0.792893 12.5 1.01675 12.5 1.29289Z"
+                                  fill="#052C65"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M6.79289 0.292893C7.18342 -0.0976322 7.81658 -0.0976301 8.20711 0.292893L14.8536 6.93934C15.0488 7.1346 15.0488 7.45118 14.8536 7.64645C14.6583 7.84171 14.3417 7.84171 14.1464 7.64645L7.5 1L0.853553 7.64645C0.658291 7.84171 0.341709 7.84171 0.146447 7.64645C-0.0488155 7.45118 -0.0488155 7.1346 0.146447 6.93934L6.79289 0.292893Z"
+                                  fill="#052C65"/>
+                        </svg>
+                        Главная
+                    </button>
+                </a>
+                <a href="turnovers.html">
+                    <button class="navButton" id="turnoverPageBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M11 15C13.2091 15 15 13.2091 15 11C15 8.79086 13.2091 7 11 7C8.79086 7 7 8.79086 7 11C7 13.2091 8.79086 15 11 15ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z"
+                                  fill="#052C65"/>
+                            <path d="M9.4375 11.9444C9.48519 12.5403 9.95568 13.0049 10.8013 13.0599V13.5H11.1764V13.0568C12.0507 12.9957 12.5625 12.5281 12.5625 11.8496C12.5625 11.2323 12.1715 10.9144 11.4721 10.7494L11.1764 10.6791V9.48105C11.5516 9.52384 11.79 9.72861 11.8472 10.0128H12.5053C12.4576 9.43826 11.9648 8.989 11.1764 8.9401V8.5H10.8013V8.94927C10.0542 9.02262 9.54559 9.47188 9.54559 10.1076C9.54559 10.6699 9.92389 11.0275 10.5533 11.1742L10.8013 11.2353V12.5067C10.4166 12.4487 10.1623 12.2378 10.1051 11.9444H9.4375ZM10.7981 10.5905C10.4294 10.5049 10.2291 10.3307 10.2291 10.0678C10.2291 9.77445 10.4453 9.5544 10.8013 9.49022V10.5905H10.7981ZM11.2305 11.3362C11.6787 11.4401 11.8854 11.6082 11.8854 11.9046C11.8854 12.2439 11.6279 12.4762 11.1764 12.5189V11.324L11.2305 11.3362Z"
+                                  fill="#052C65"/>
+                            <path d="M1 0C0.447715 0 0 0.447716 0 1V9C0 9.55229 0.447715 10 1 10H5.08296C5.1407 9.65585 5.22773 9.32163 5.34141 9H3C3 7.89543 2.10457 7 1 7V3C2.10457 3 3 2.10457 3 1H13C13 2.10457 13.8954 3 15 3V6.52779C15.3801 6.86799 15.7166 7.25594 16 7.68221V1C16 0.447715 15.5523 0 15 0H1Z"
+                                  fill="#052C65"/>
+                            <path d="M9.9983 5.08325C9.99943 5.05564 10 5.02789 10 5C10 3.89543 9.10457 3 8 3C6.89543 3 6 3.89543 6 5C6 5.6845 6.34387 6.28869 6.86829 6.64924C7.71486 5.84504 8.79591 5.28533 9.9983 5.08325Z"
+                                  fill="#052C65"/>
+                        </svg>
+                        Доходы & Расходы
+                    </button>
+                </a>
+                <div class="dropdown-active">
+                    <button class="navButton categoriesPageBtn">
+                        Категории
+                        <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M0.146894 12.8546C0.0528521 12.7608 0 12.6335 0 12.5006C0 12.3678 0.0528521 12.2404 0.146894 12.1466L5.79389 6.50064L0.146894 0.854643C0.0204218 0.72817 -0.0289712 0.543834 0.0173208 0.37107C0.0636128 0.198306 0.198557 0.0633621 0.371321 0.0170698C0.544085 -0.0292225 0.728422 0.0201702 0.854894 0.146643L6.85489 6.14664C6.94894 6.24045 7.00179 6.36782 7.00179 6.50064C7.00179 6.63347 6.94894 6.76084 6.85489 6.85464L0.854894 12.8546C0.76109 12.9487 0.633721 13.0015 0.500894 13.0015C0.368066 13.0015 0.240698 12.9487 0.146894 12.8546Z"
+                                  fill="#052C65"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-content-active">
+                        <a href="incomes.html">Доходы</a>
+                        <a href="expenses.html">Расходы</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="userData">
+                <div class="balance">
+                    Баланс:<span id="currentBalance">500$</span>
+                </div>
+                <div class="user">
+                    <img src="../static/images/Icon.png" alt="Icon">
+                    Roman Chernov
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="userData">
-        <div class="balance">
-          Баланс:<span id="currentBalance">500$</span>
-        </div>
-        <div class="user">
-          <img src="../static/images/Icon.png" alt="Icon">
-          Roman Chernov
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="mainInfo">
-    <h1 class="mainTitle">Расходы</h1>
+    <section class="mainInfo">
+        <h1 class="mainTitle">Расходы</h1>
 
-  </section>
+        <div class="operations">
+            <figure class="income-card">
+                <h2>Еда</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Жильё</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Здоровье</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Кафе</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Авто</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Одежда</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Развлечения</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Счета</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card">
+                <h2>Спорт</h2>
+                <div>
+                    <button class="blueBtn">Редактировать</button>
+                    <button class="redBtn deleteOperation">Удалить</button>
+                </div>
+            </figure>
+            <figure class="income-card empty-income-card ">
+                <button class="addOperation">+</button>
+            </figure>
+        </div>
+
+        <div class="createOperation">
+            <label class="newOperationName">
+                <input type="text" placeholder="Название..." id="newIncomeName" class="regularInt">
+            </label>
+
+            <div>
+                <button class="greenBtn">Создать</button>
+                <button class="redBtn">Отмена</button>
+            </div>
+        </div>
+        <div class="editOperation">
+            <label class="newOperationName">
+                <input type="text" id="editIncomeName" class="regularInt">
+            </label>
+
+            <div>
+                <button class="greenBtn">Сохранить</button>
+                <button class="redBtn cancelEdit">Отмена</button>
+            </div>
+        </div>
+    </section>
 </main>
 
+<div class="popup-overlay">
+    <div class="incomePopup">
+        <h3>Вы действительно хотите удалить категорию?</h3>
+        <div>
+            <button class="greenBtn confirmDelete">Да, удалить</button>
+            <button class="redBtn cancelDelete">Не удалять</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../src/components/expenses.js"></script>
 </body>
 </html>
