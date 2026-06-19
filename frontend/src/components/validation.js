@@ -1,3 +1,5 @@
+import '../../styles/logpage.css'
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const RULES = {

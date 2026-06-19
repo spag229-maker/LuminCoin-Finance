@@ -1,3 +1,5 @@
+import '../../styles/turnovers.css'
+
 const newIncomeBtn = document.querySelector('#newIncome');
 const newExpenseBtn = document.querySelector('#newExpense');
 const filters = document.querySelector('.mainInfo-filtersStroke');
@@ -27,12 +29,18 @@ cancelCreateTurnover.onclick = () => {
     operations.style.display = 'block';
     newTurnover.style.display = 'block';
     mainTitle.innerText = 'Доходы и расходы';
+
+    document.querySelector('#turnoverType').value = null;
+    document.querySelector('#turnoverCategory').value = null;
+    document.querySelector('#turnoverAmount').value = null;
+    document.querySelector('#turnoverDate').value = null;
+    document.querySelector('#turnoverComment').value = null;
 };
 
 operations.addEventListener('click', (e) => {
     const editBtn = e.target.closest('.editThisTurnover');
 
-    if (!editBtn) return;
+    // if (!editBtn) return;
 
     const operation = editBtn.closest('.operation');
 

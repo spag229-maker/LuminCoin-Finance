@@ -1,3 +1,6 @@
+import '../../styles/expenses.css';
+import '../../styles/operations.css'
+
 const popup = document.querySelector('.popup-overlay');
 const deleteButtons = document.querySelectorAll('.deleteOperation');
 const addBtn = document.querySelector('.addOperation');
