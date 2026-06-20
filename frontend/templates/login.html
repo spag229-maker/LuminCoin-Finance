@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>LuminCoin Finance</title>
-</head>
-<body>
-
 <section class="logpage-container">
     <div class="logpage-logo">
-        <img src="../static/images/logpageLogo.png" alt="Logo">
+        <img src="/images/logpageLogo.png" alt="Logo">
     </div>
     <h1 class="mainTitle">Вход</h1>
     <div class="form">
-        <form action="/signup" method="POST" class="formFields">
+        <form class="formFields" id="authForm">
 
             <div class="formField">
                 <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,18 +46,14 @@
                 <span>Запомнить меня</span>
             </label>
 
+            <div class="formError" id="formError"></div>
+
         </form>
         <button type="submit" class="blueBtn" id="signupBtn">
             Войти
         </button>
     </div>
     <div class="switchPage">
-        Ещё нет аккаунта? <a href="signup.html" id="toSignup">Пройдите регистрацию</a>
+        Ещё нет аккаунта? <a href="#/signup" id="toSignup">Пройдите регистрацию</a>
     </div>
 </section>
-
-
-<script src="../src/components/validation.js"></script>
-<script src="../src/main.js"></script>
-</body>
-</html>

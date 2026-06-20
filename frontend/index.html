@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>LuminCoin Finance</title>
+    <link rel="stylesheet" href="/styles/common.css">
 </head>
 <body>
 
 <main class="main">
-    <section class="sideBar">
+    <section class="sideBar" id="sideBar" style="display: none;">
         <div class="sideBar-container">
             <div class="logo">
-                <a href="#">
-                    <img src="static/images/Logo.png" alt="Logo">
+                <a href="#/">
+                    <img src="/images/Logo.png" alt="Logo">
                 </a>
             </div>
             <div class="navMenu">
-                <button class="navButton navButton-active" id="mainPageBtn">
-                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M1.5 12.2929V5.79289H2.5V12.2929C2.5 12.569 2.72386 12.7929 3 12.7929H12C12.2761 12.7929 12.5 12.569 12.5 12.2929V5.79289H13.5V12.2929C13.5 13.1213 12.8284 13.7929 12 13.7929H3C2.17157 13.7929 1.5 13.1213 1.5 12.2929Z"
-                              fill="white"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M12.5 1.29289V4.79289L10.5 2.79289V1.29289C10.5 1.01675 10.7239 0.792893 11 0.792893H12C12.2761 0.792893 12.5 1.01675 12.5 1.29289Z"
-                              fill="white"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M6.79289 0.292893C7.18342 -0.0976322 7.81658 -0.0976301 8.20711 0.292893L14.8536 6.93934C15.0488 7.1346 15.0488 7.45118 14.8536 7.64645C14.6583 7.84171 14.3417 7.84171 14.1464 7.64645L7.5 1L0.853553 7.64645C0.658291 7.84171 0.341709 7.84171 0.146447 7.64645C-0.0488155 7.45118 -0.0488155 7.1346 0.146447 6.93934L6.79289 0.292893Z"
-                              fill="white"/>
-                    </svg>
-                    Главная
-                </button>
-                <a href="templates/turnovers.html">
+                <a href="#/">
+                    <button class="navButton" id="mainPageBtn">
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M1.5 12.2929V5.79289H2.5V12.2929C2.5 12.569 2.72386 12.7929 3 12.7929H12C12.2761 12.7929 12.5 12.569 12.5 12.2929V5.79289H13.5V12.2929C13.5 13.1213 12.8284 13.7929 12 13.7929H3C2.17157 13.7929 1.5 13.1213 1.5 12.2929Z"
+                                  fill="#052C65"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M12.5 1.29289V4.79289L10.5 2.79289V1.29289C10.5 1.01675 10.7239 0.792893 11 0.792893H12C12.2761 0.792893 12.5 1.01675 12.5 1.29289Z"
+                                  fill="#052C65"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M6.79289 0.292893C7.18342 -0.0976322 7.81658 -0.0976301 8.20711 0.292893L14.8536 6.93934C15.0488 7.1346 15.0488 7.45118 14.8536 7.64645C14.6583 7.84171 14.3417 7.84171 14.1464 7.64645L7.5 1L0.853553 7.64645C0.658291 7.84171 0.341709 7.84171 0.146447 7.64645C-0.0488155 7.45118 -0.0488155 7.1346 0.146447 6.93934L6.79289 0.292893Z"
+                                  fill="#052C65"/>
+                        </svg>
+                        Главная
+                    </button>
+                </a>
+                <a href="#/turnovers">
                     <button class="navButton" id="turnoverPageBtn">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -55,8 +58,8 @@
                         </svg>
                     </button>
                     <div class="dropdown-content">
-                        <a href="templates/incomes.html">Доходы</a>
-                        <a href="templates/expenses.html">Расходы</a>
+                        <a href="#/incomes">Доходы</a>
+                        <a href="#/expenses">Расходы</a>
                     </div>
                 </div>
             </div>
@@ -65,43 +68,19 @@
                     Баланс:<span id="currentBalance">500$</span>
                 </div>
                 <div class="user">
-                    <img src="static/images/Icon.png" alt="Icon">
-                    Roman Chernov
+                    <img src="/images/Icon.png" alt="Icon">
+                    <span id="userName"></span>
                 </div>
+                <a href="#/logout" id="logoutBtn" class="logoutBtn">Выйти</a>
             </div>
         </div>
     </section>
 
-    <section class="mainInfo">
-        <h1 class="mainTitle">Главная</h1>
-        <div class="mainInfo-filtersStroke">
-            <ul class="mainInfo-filters">
-                <li class="mainInfo-filter mainInfo-filter-active">Сегодня</li>
-                <li class="mainInfo-filter">Неделя</li>
-                <li class="mainInfo-filter">Месяц</li>
-                <li class="mainInfo-filter">Год</li>
-                <li class="mainInfo-filter">Все</li>
-                <li class="mainInfo-filter">Интервал</li>
-            </ul>
-            <div class="dateFilters">
-                <label for="startDate">с</label>
-                <input type="text" placeholder="Дата" class="dateFilter" id="startDate">
-                <label for="endDate">по</label>
-                <input type="text" placeholder="Дата" class="dateFilter" id="endDate">
-            </div>
-        </div>
-        <div class="statistic">
-            <div class="income">
-                <img src="static/images/incomePie.png" alt="incomePie">
-            </div>
-            <div class="expense">
-                <img src="static/images/expensePie.png" alt="expensePie">
-            </div>
-        </div>
+    <section class="mainInfo" id="content">
+        <!-- сюда роутер вставляет содержимое текущей страницы -->
     </section>
 </main>
 
-<script type="module" src="src/components/index.js"></script>
-<script type="module" src="src/main.js"></script>
+<script type="module" src="/src/utils/app.js"></script>
 </body>
 </html>

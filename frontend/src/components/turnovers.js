@@ -1,66 +1,73 @@
-import '../../styles/turnovers.css'
+export class Turnovers {
+    constructor() {
+        this.newIncomeBtn = document.querySelector('#newIncome');
+        this.newExpenseBtn = document.querySelector('#newExpense');
+        this.filters = document.querySelector('.mainInfo-filtersStroke');
+        this.operations = document.querySelector('.operations');
+        this.createTurnover = document.querySelector('.createTurnover');
+        this.cancelCreateTurnover = document.querySelector('.cancelCreateTurnover');
+        this.newTurnover = document.querySelector('.newTurnover');
+        this.mainTitle = document.querySelector('.mainTitle');
 
-const newIncomeBtn = document.querySelector('#newIncome');
-const newExpenseBtn = document.querySelector('#newExpense');
-const filters = document.querySelector('.mainInfo-filtersStroke');
-const operations = document.querySelector('.operations');
-const createTurnover = document.querySelector('.createTurnover');
-const cancelCreateTurnover = document.querySelector('.cancelCreateTurnover');
-const newTurnover = document.querySelector('.newTurnover');
-const mainTitle = document.querySelector('.mainTitle');
+        this.processBindings();
+    }
 
-const showCreateTurnover = () => {
-    filters.style.display = 'none';
-    operations.style.display = 'none';
-    newTurnover.style.display = 'none';
+    showCreateTurnover() {
+        this.filters.style.display = 'none';
+        this.operations.style.display = 'none';
+        this.newTurnover.style.display = 'none';
 
-    mainTitle.innerText = 'Создание дохода/расхода';
+        this.mainTitle.innerText = 'Создание дохода/расхода';
 
-    createTurnover.style.display = 'flex';
-};
+        this.createTurnover.style.display = 'flex';
+    }
 
-newIncomeBtn.onclick = showCreateTurnover;
-newExpenseBtn.onclick = showCreateTurnover;
+    hideCreateTurnover() {
+        this.createTurnover.style.display = 'none';
 
-cancelCreateTurnover.onclick = () => {
-    createTurnover.style.display = 'none';
+        this.filters.style.display = 'flex';
+        this.operations.style.display = 'block';
+        this.newTurnover.style.display = 'block';
+        this.mainTitle.innerText = 'Доходы и расходы';
 
-    filters.style.display = 'flex';
-    operations.style.display = 'block';
-    newTurnover.style.display = 'block';
-    mainTitle.innerText = 'Доходы и расходы';
+        document.querySelector('#turnoverType').value = '';
+        document.querySelector('#turnoverCategory').value = '';
+        document.querySelector('#turnoverAmount').value = '';
+        document.querySelector('#turnoverDate').value = '';
+        document.querySelector('#turnoverComment').value = '';
+    }
 
-    document.querySelector('#turnoverType').value = null;
-    document.querySelector('#turnoverCategory').value = null;
-    document.querySelector('#turnoverAmount').value = null;
-    document.querySelector('#turnoverDate').value = null;
-    document.querySelector('#turnoverComment').value = null;
-};
+    processBindings() {
+        this.newIncomeBtn.onclick = () => this.showCreateTurnover();
+        this.newExpenseBtn.onclick = () => this.showCreateTurnover();
 
-operations.addEventListener('click', (e) => {
-    const editBtn = e.target.closest('.editThisTurnover');
+        this.cancelCreateTurnover.onclick = () => this.hideCreateTurnover();
 
-    // if (!editBtn) return;
+        this.operations.addEventListener('click', (e) => {
+            const editBtn = e.target.closest('.editThisTurnover');
+            if (!editBtn) return;
 
-    const operation = editBtn.closest('.operation');
+            const operation = editBtn.closest('.operation');
 
-    const type = operation.querySelector('.type').textContent.trim();
-    const category = operation.querySelector('.category').textContent.trim();
-    const amount = operation.querySelector('.sum').textContent.trim();
-    const date = operation.querySelector('.date').textContent.trim();
-    const comment = operation.querySelector('.comment').textContent.trim();
+            const type = operation.querySelector('.type').textContent.trim();
+            const category = operation.querySelector('.category').textContent.trim();
+            const amount = operation.querySelector('.sum').textContent.trim();
+            const date = operation.querySelector('.date').textContent.trim();
+            const comment = operation.querySelector('.comment').textContent.trim();
 
-    filters.style.display = 'none';
-    operations.style.display = 'none';
-    newTurnover.style.display = 'none';
+            this.filters.style.display = 'none';
+            this.operations.style.display = 'none';
+            this.newTurnover.style.display = 'none';
 
-    mainTitle.innerText = 'Редактирование дохода/расхода';
+            this.mainTitle.innerText = 'Редактирование дохода/расхода';
 
-    createTurnover.style.display = 'flex';
+            this.createTurnover.style.display = 'flex';
 
-    document.querySelector('#turnoverType').value = type;
-    document.querySelector('#turnoverCategory').value = category;
-    document.querySelector('#turnoverAmount').value = amount;
-    document.querySelector('#turnoverDate').value = date;
-    document.querySelector('#turnoverComment').value = comment;
-});
+            document.querySelector('#turnoverType').value = type;
+            document.querySelector('#turnoverCategory').value = category;
+            document.querySelector('#turnoverAmount').value = amount;
+            document.querySelector('#turnoverDate').value = date;
+            document.querySelector('#turnoverComment').value = comment;
+        });
+    }
+}

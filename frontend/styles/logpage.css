@@ -114,3 +114,13 @@
 .formInput:focus {
     outline: none;
 }
+
+.blueBtn {
+    margin: 20px 0 10px 0;
+}
+
+#signupBtn {
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}

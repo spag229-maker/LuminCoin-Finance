@@ -278,3 +278,11 @@ body {
     font-size: 15px;
     line-height: 22px;
 }
+
+.logoutBtn {
+    font-family: Roboto-Medium, sans-serif;
+    width: 52px;
+    display: block;
+    padding: 20px 0 0 20px;
+    color: #DC3545;
+}
