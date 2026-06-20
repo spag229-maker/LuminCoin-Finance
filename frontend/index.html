@@ -48,7 +48,7 @@
                         Доходы & Расходы
                     </button>
                 </a>
-                <div class="dropdown">
+                <div class="dropdown" id="categoriesDropdown">
                     <button class="navButton categoriesPageBtn">
                         Категории
                         <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                                   fill="#052C65"/>
                         </svg>
                     </button>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="categoriesDropdownContent">
                         <a href="#/incomes">Доходы</a>
                         <a href="#/expenses">Расходы</a>
                     </div>
@@ -67,11 +67,15 @@
                 <div class="balance">
                     Баланс:<span id="currentBalance">500$</span>
                 </div>
-                <div class="user">
-                    <img src="/images/Icon.png" alt="Icon">
-                    <span id="userName"></span>
+                <div class="userDropdown" id="userDropdown">
+                    <button class="user userDropdownToggle" id="userDropdownToggle">
+                        <img src="/images/Icon.png" alt="Icon">
+                        <span id="userName"></span>
+                    </button>
+                    <div class="userDropdown-content" id="userDropdownContent">
+                        <a href="#/logout" id="logoutBtn">Выйти</a>
+                    </div>
                 </div>
-                <a href="#/logout" id="logoutBtn" class="logoutBtn">Выйти</a>
             </div>
         </div>
     </section>

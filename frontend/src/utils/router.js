@@ -71,6 +71,10 @@ export class Router {
     async openRoute() {
         const urlRoute = window.location.hash.split('?')[0] || '#/';
 
+        if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur();
+        }
+
         if (urlRoute === '#/logout') {
             await Auth.logout();
             window.location.href = '#/login';
@@ -147,6 +151,26 @@ export class Router {
         const activeId = map[urlRoute];
         if (activeId) {
             document.getElementById(activeId)?.classList.add('navButton-active');
+        }
+
+        this.updateCategoriesDropdown(urlRoute);
+    }
+
+    updateCategoriesDropdown(urlRoute) {
+        const dropdown = document.getElementById('categoriesDropdown');
+        const dropdownContent = document.getElementById('categoriesDropdownContent');
+        if (!dropdown || !dropdownContent) return;
+
+        const isCategoriesRoute = urlRoute === '#/incomes' || urlRoute === '#/expenses';
+
+        dropdown.classList.toggle('dropdown-active', isCategoriesRoute);
+        dropdownContent.classList.toggle('dropdown-content-active', isCategoriesRoute);
+
+        dropdownContent.classList.remove('dropdown-content-incomes', 'dropdown-content-expenses');
+        if (urlRoute === '#/incomes') {
+            dropdownContent.classList.add('dropdown-content-incomes');
+        } else if (urlRoute === '#/expenses') {
+            dropdownContent.classList.add('dropdown-content-expenses');
         }
     }
 }
