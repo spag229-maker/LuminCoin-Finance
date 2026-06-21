@@ -1,91 +1,28 @@
 <h1 class="mainTitle">Расходы</h1>
 
-<div class="operations">
-    <figure class="income-card">
-        <h2>Еда</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Жильё</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Здоровье</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Кафе</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Авто</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Одежда</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Развлечения</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Счета</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card">
-        <h2>Спорт</h2>
-        <div>
-            <button class="blueBtn">Редактировать</button>
-            <button class="redBtn deleteOperation">Удалить</button>
-        </div>
-    </figure>
-    <figure class="income-card empty-income-card ">
-        <button class="addOperation">+</button>
-    </figure>
+<div class="operations" id="categoriesList">
+    <!-- карточки категорий -->
 </div>
 
 <div class="createOperation">
     <label class="newOperationName">
         <input type="text" placeholder="Название..." id="newIncomeName" class="regularInt">
     </label>
+    <span class="validation-hint" id="createError"></span>
 
     <div>
-        <button class="greenBtn">Создать</button>
-        <button class="redBtn">Отмена</button>
+        <button class="greenBtn" id="confirmCreate">Создать</button>
+        <button class="redBtn" id="cancelCreate">Отмена</button>
     </div>
 </div>
 <div class="editOperation">
     <label class="newOperationName">
         <input type="text" id="editIncomeName" class="regularInt">
     </label>
+    <span class="validation-hint" id="editError"></span>
 
     <div>
-        <button class="greenBtn">Сохранить</button>
+        <button class="greenBtn" id="confirmEdit">Сохранить</button>
         <button class="redBtn cancelEdit">Отмена</button>
     </div>
 </div>

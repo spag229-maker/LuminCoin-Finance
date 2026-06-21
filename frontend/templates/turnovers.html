@@ -5,21 +5,21 @@
 </div>
 <div class="mainInfo-filtersStroke">
     <ul class="mainInfo-filters">
-        <li class="mainInfo-filter mainInfo-filter-active">Сегодня</li>
-        <li class="mainInfo-filter">Неделя</li>
-        <li class="mainInfo-filter">Месяц</li>
-        <li class="mainInfo-filter">Год</li>
-        <li class="mainInfo-filter">Все</li>
-        <li class="mainInfo-filter">Интервал</li>
+        <li class="mainInfo-filter mainInfo-filter-active" data-period="today">Сегодня</li>
+        <li class="mainInfo-filter" data-period="week">Неделя</li>
+        <li class="mainInfo-filter" data-period="month">Месяц</li>
+        <li class="mainInfo-filter" data-period="year">Год</li>
+        <li class="mainInfo-filter" data-period="all">Все</li>
+        <li class="mainInfo-filter" data-period="interval">Интервал</li>
     </ul>
     <div class="dateFilters">
         <label for="startDate">с</label>
-        <input type="text" placeholder="Дата" class="dateFilter" id="startDate">
+        <input type="date" class="dateFilter" id="startDate">
         <label for="endDate">по</label>
-        <input type="text" placeholder="Дата" class="dateFilter" id="endDate">
+        <input type="date" class="dateFilter" id="endDate">
     </div>
 </div>
-<div class="operations">
+<div class="operations" id="operationsList">
     <div class="operation-explan operation-field">
         <span>№ операции</span>
         <span></span>
@@ -34,90 +34,51 @@
         <span>Комментарий</span>
         <span></span>
     </div>
-    <div class="operation operation-field">
-        <span class="number">1</span>
-        <span></span>
-        <span class="type income ">Доход</span>
-        <span></span>
-        <span class="category">зарплата</span>
-        <span></span>
-        <span class="sum">500$</span>
-        <span></span>
-        <span class="date">11.09.2022</span>
-        <span></span>
-        <span class="comment"></span> <!-- Комментарий-->
-        <span></span>
-        <svg class="deleteThisTurnover" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
-                  fill="black"/>
-            <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
-                  fill="black"/>
-            <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
-                  fill="black"/>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
-                  fill="black"/>
-        </svg>
-        <span></span>
-        <svg class="editThisTurnover" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
-                  fill="black"/>
-        </svg>
-    </div>
-    <div class="operation operation-field">
-        <span class="number">2</span>
-        <span></span>
-        <span class="type expense">Расход</span>
-        <span></span>
-        <span class="category">жильё</span>
-        <span></span>
-        <span class="sum">2 500$</span>
-        <span></span>
-        <span class="date">11.09.2022</span>
-        <span></span>
-        <span class="comment"></span> <!-- Комментарий-->
-        <span></span>
-        <svg class="deleteThisTurnover" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z"
-                  fill="black"/>
-            <path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z"
-                  fill="black"/>
-            <path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z"
-                  fill="black"/>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z"
-                  fill="black"/>
-        </svg>
-        <span></span>
-        <svg class="editThisTurnover" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z"
-                  fill="black"/>
-        </svg>
-    </div>
+    <!-- операции -->
 </div>
 <div class="createTurnover">
     <label class="newOperationName">
-        <input type="text" class="regularInt" placeholder="Тип..." id="turnoverType">
+        <select class="regularInt" id="turnoverType" disabled>
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
     </label>
+    <span class="validation-hint" id="typeError"></span>
 
     <label class="newOperationName">
-        <input type="text" class="regularInt" placeholder="Категория..." id="turnoverCategory">
+        <select class="regularInt" id="turnoverCategory">
+            <option value="" disabled selected>Выберите категорию...</option>
+        </select>
     </label>
+    <span class="validation-hint" id="categoryError"></span>
 
     <label class="newOperationName">
-        <input type="text" class="regularInt" placeholder="Сумма в $..." id="turnoverAmount">
+        <input type="number" step="0.01" min="0" class="regularInt" placeholder="Сумма в $..." id="turnoverAmount">
     </label>
+    <span class="validation-hint" id="amountError"></span>
 
     <label class="newOperationName">
-        <input type="text" class="regularInt" placeholder="Дата..." id="turnoverDate">
+        <input type="date" class="regularInt" id="turnoverDate">
     </label>
+    <span class="validation-hint" id="dateError"></span>
 
     <label class="newOperationName">
         <input type="text" class="regularInt" placeholder="Комментарий..." id="turnoverComment">
     </label>
+    <span class="validation-hint" id="commentError"></span>
 
     <div class="createTurnover-buttons">
-        <button class="greenBtn">Создать</button>
+        <button class="greenBtn" id="confirmTurnover">Создать</button>
         <button class="redBtn cancelCreateTurnover">Отмена</button>
+    </div>
+</div>
+
+<div class="popup-overlay">
+    <div class="incomePopup">
+        <h3>Вы действительно хотите удалить операцию?</h3>
+        <div>
+            <button class="greenBtn confirmDelete">Да, удалить</button>
+            <button class="redBtn cancelDelete">Не удалять</button>
+        </div>
     </div>
 </div>

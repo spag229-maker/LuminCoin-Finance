@@ -1,4 +1,5 @@
 import {Auth} from "../components/services/auth.js";
+import {refreshBalance} from "./sidebar.js";
 
 export class Router {
     constructor() {
@@ -60,7 +61,7 @@ export class Router {
                 route: '#/turnovers',
                 title: 'Доходы и расходы',
                 template: '/templates/turnovers.html',
-                styles: ['/styles/turnovers.css'],
+                styles: ['/styles/turnovers.css', '/styles/operations.css'],
                 load: () => {
                     import('../components/turnovers.js').then(m => new m.Turnovers());
                 },
@@ -108,6 +109,10 @@ export class Router {
 
         this.updateSideBar(isPublic);
         this.highlightActiveNav(urlRoute);
+
+        if (!isPublic) {
+            refreshBalance();
+        }
 
         newRoute.load();
     }
