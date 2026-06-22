@@ -11,5 +11,8 @@
   "devDependencies": {
     "postcss": "^8.5.15",
     "vite": "^6.4.3"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1"
   }
 }

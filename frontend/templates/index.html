@@ -1,26 +1,26 @@
 <h1 class="mainTitle">Главная</h1>
 <div class="mainInfo-filtersStroke">
     <ul class="mainInfo-filters">
-        <li class="mainInfo-filter mainInfo-filter-active">Сегодня</li>
-        <li class="mainInfo-filter">Неделя</li>
-        <li class="mainInfo-filter">Месяц</li>
-        <li class="mainInfo-filter">Год</li>
-        <li class="mainInfo-filter">Все</li>
-        <li class="mainInfo-filter">Интервал</li>
+        <li class="mainInfo-filter mainInfo-filter-active" data-period="today">Сегодня</li>
+        <li class="mainInfo-filter" data-period="week">Неделя</li>
+        <li class="mainInfo-filter" data-period="month">Месяц</li>
+        <li class="mainInfo-filter" data-period="year">Год</li>
+        <li class="mainInfo-filter" data-period="all">Все</li>
+        <li class="mainInfo-filter" data-period="interval">Интервал</li>
     </ul>
     <div class="dateFilters">
         <label for="startDate">с</label>
-        <input type="text" placeholder="Дата" class="dateFilter" id="startDate">
+        <input type="date" class="dateFilter" id="startDate" disabled>
         <label for="endDate">по</label>
-        <input type="text" placeholder="Дата" class="dateFilter" id="endDate">
+        <input type="date" class="dateFilter" id="endDate" disabled>
     </div>
 </div>
 <div class="statistic">
     <div class="income">
-        <img src="/images/incomePie.png" alt="incomePie">
+        <canvas id="incomeChart"></canvas>
     </div>
     <div class="midline"></div>
     <div class="expense">
-        <img src="/images/expensePie.png" alt="expensePie">
+        <canvas id="expenseChart"></canvas>
     </div>
 </div>

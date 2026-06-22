@@ -73,7 +73,7 @@
                         <span id="userName"></span>
                     </button>
                     <div class="userDropdown-content" id="userDropdownContent">
-                        <a href="#/logout" id="logoutBtn">Выйти</a>
+                        <a href="#" id="logoutBtn">Выйти</a>
                     </div>
                 </div>
             </div>
@@ -84,6 +84,16 @@
         <!-- содержимое текущей страницы -->
     </section>
 </main>
+
+<div class="popup-overlay" id="logoutPopup">
+    <div class="incomePopup">
+        <h3>Вы действительно хотите выйти из аккаунта?</h3>
+        <div>
+            <button class="greenBtn" id="confirmLogout">Да, выйти</button>
+            <button class="redBtn" id="cancelLogout">Нет, остаться</button>
+        </div>
+    </div>
+</div>
 
 <script type="module" src="/src/utils/app.js"></script>
 </body>
