@@ -1,6 +1,9 @@
 import {OperationsService} from "./services/operations-service.js";
 import {CategoriesService} from "./services/categories-service.js";
 import {refreshBalance} from "../utils/sidebar.js";
+import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
+import localeRu from 'air-datepicker/locale/ru';
 
 const DELETE_ICON_SVG = `<svg class="deleteThisTurnover" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5.5C4.27614 5.5 4.5 5.72386 4.5 6V12C4.5 12.2761 4.27614 12.5 4 12.5C3.72386 12.5 3.5 12.2761 3.5 12V6C3.5 5.72386 3.72386 5.5 4 5.5Z" fill="black"/><path d="M6.5 5.5C6.77614 5.5 7 5.72386 7 6V12C7 12.2761 6.77614 12.5 6.5 12.5C6.22386 12.5 6 12.2761 6 12V6C6 5.72386 6.22386 5.5 6.5 5.5Z" fill="black"/><path d="M9.5 6C9.5 5.72386 9.27614 5.5 9 5.5C8.72386 5.5 8.5 5.72386 8.5 6V12C8.5 12.2761 8.72386 12.5 9 12.5C9.27614 12.5 9.5 12.2761 9.5 12V6Z" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3C13 3.55228 12.5523 4 12 4H11.5V13C11.5 14.1046 10.6046 15 9.5 15H3.5C2.39543 15 1.5 14.1046 1.5 13V4H1C0.447715 4 0 3.55228 0 3V2C0 1.44772 0.447715 1 1 1H4.5C4.5 0.447715 4.94772 0 5.5 0H7.5C8.05229 0 8.5 0.447715 8.5 1H12C12.5523 1 13 1.44772 13 2V3ZM2.61803 4L2.5 4.05902V13C2.5 13.5523 2.94772 14 3.5 14H9.5C10.0523 14 10.5 13.5523 10.5 13V4.05902L10.382 4H2.61803ZM1 3V2H12V3H1Z" fill="black"/></svg>`;
 
@@ -17,6 +20,18 @@ export class Turnovers {
         this.filterItems = document.querySelectorAll('.mainInfo-filter');
         this.startDateInput = document.getElementById('startDate');
         this.endDateInput = document.getElementById('endDate');
+
+        this.startDatePicker = new AirDatepicker('#startDate', {
+            locale: localeRu,
+            autoClose: true,
+            dateFormat: 'dd.MM.yyyy',
+        });
+
+        this.endDatePicker = new AirDatepicker('#endDate', {
+            locale: localeRu,
+            autoClose: true,
+            dateFormat: 'dd.MM.yyyy',
+        });
 
         this.operationsList = document.getElementById('operationsList');
         this.createTurnover = document.querySelector('.createTurnover');

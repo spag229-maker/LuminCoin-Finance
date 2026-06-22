@@ -1,5 +1,8 @@
 import {Chart} from 'chart.js/auto';
 import {OperationsService} from "./services/operations-service.js";
+import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
+import localeRu from 'air-datepicker/locale/ru';
 
 const CHART_COLORS = [
     '#0D6EFD', '#20C997', '#DC3545', '#FD7E14', '#FFC107',
@@ -11,6 +14,18 @@ export class Main {
         this.filterItems = document.querySelectorAll('.mainInfo-filter');
         this.startDateInput = document.getElementById('startDate');
         this.endDateInput = document.getElementById('endDate');
+
+        this.startDatePicker = new AirDatepicker('#startDate', {
+            autoClose: true,
+            locale: localeRu,
+            dateFormat: 'dd.MM.yyyy',
+        });
+
+        this.endDatePicker = new AirDatepicker('#endDate', {
+            autoClose: true,
+            locale: localeRu,
+            dateFormat: 'dd.MM.yyyy',
+        });
 
         this.incomeCanvas = document.getElementById('incomeChart');
         this.expenseCanvas = document.getElementById('expenseChart');
