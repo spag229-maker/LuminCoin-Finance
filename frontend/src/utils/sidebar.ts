@@ -1,6 +1,6 @@
-import {BalanceService} from "../components/services/balance-service.js";
+import { BalanceService } from '../components/services/balance-service.js';
 
-export async function refreshBalance() {
+export async function refreshBalance(): Promise<void> {
     const balanceElement = document.getElementById('currentBalance');
     if (!balanceElement) return;
 

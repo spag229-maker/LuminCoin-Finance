@@ -1,8 +1,11 @@
-import {Router} from "./router.js";
+import { Router } from './router.js';
 
 class App {
+    private readonly router: Router;
+
     constructor() {
         this.router = new Router();
+
         window.addEventListener('DOMContentLoaded', this.handleRouteChanging.bind(this));
         window.addEventListener('hashchange', this.handleRouteChanging.bind(this));
         window.addEventListener('popstate', this.handleRouteChanging.bind(this));
@@ -11,35 +14,36 @@ class App {
         this.bindLogoutPopup();
     }
 
-    handleRouteChanging() {
+    private handleRouteChanging(): void {
         this.router.openRoute();
     }
 
-    bindUserDropdown() {
+    private bindUserDropdown(): void {
         const toggle = document.getElementById('userDropdownToggle');
         const dropdown = document.getElementById('userDropdown');
         if (!toggle || !dropdown) return;
 
-        toggle.addEventListener('click', (e) => {
+        toggle.addEventListener('click', (e: MouseEvent) => {
             e.stopPropagation();
             dropdown.classList.toggle('userDropdown-open');
         });
 
-        document.addEventListener('click', (e) => {
-            if (!dropdown.contains(e.target)) {
+        document.addEventListener('click', (e: MouseEvent) => {
+            if (!dropdown.contains(e.target as Node)) {
                 dropdown.classList.remove('userDropdown-open');
             }
         });
     }
 
-    bindLogoutPopup() {
+    private bindLogoutPopup(): void {
         const logoutBtn = document.getElementById('logoutBtn');
         const popup = document.getElementById('logoutPopup');
         const confirmBtn = document.getElementById('confirmLogout');
         const cancelBtn = document.getElementById('cancelLogout');
+
         if (!logoutBtn || !popup || !confirmBtn || !cancelBtn) return;
 
-        logoutBtn.addEventListener('click', (e) => {
+        logoutBtn.addEventListener('click', (e: MouseEvent) => {
             e.preventDefault();
             popup.style.display = 'flex';
         });
@@ -53,7 +57,7 @@ class App {
             popup.style.display = 'none';
         });
 
-        popup.addEventListener('click', (e) => {
+        popup.addEventListener('click', (e: MouseEvent) => {
             if (e.target === popup) {
                 popup.style.display = 'none';
             }
@@ -61,4 +65,4 @@ class App {
     }
 }
 
-(new App());
+new App();
